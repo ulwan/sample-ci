@@ -12,31 +12,6 @@ pipeline {
                 checkout scm
             }
         }
-        // test##hmm454545
-        // stage('Docker Up') {
-        //     steps {
-        //         echo '> Building the docker containers ...'
-        //         sh 'make -sC docker/ci/ build'
-        //     }
-        // }
-        // stage('Composer Install') {
-        //     steps {
-        //         echo '> Building the application within the container ...'
-        //         sh 'make -sC docker/ci/ composer'
-        //     }
-        // }
-        // stage('Test') {
-        //     steps {
-        //         echo '> Running the application tests ...'
-        //         sh 'make -sC docker/ci/ test'
-        //     }
-        // }
-        // stage('Cleanup') {
-        //     steps {
-        //         echo '> Cleaning the docker artifacts ...'
-        //         sh 'make -sC docker/ci/ clean'
-        //     }
-        // }
         stage('Docker Image Build') {
             steps {
                 sh 'docker build -t hello:latest .'
